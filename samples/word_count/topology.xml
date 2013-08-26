@@ -1,0 +1,42 @@
+<topology>
+  <id>wordcount</id>
+  <works>2</works>
+  <spouts>
+    <spout>
+      <id>spout</id>
+      <shell>spout_sentences_main</shell>
+      <shell_params>--spout_interval=100</shell_params>
+      <fields>sentence</fields>
+      <threads>1</threads>
+    </spout>
+  </spouts>
+  <bolts>
+    <bolt>
+      <id>split</id>
+      <shell>split_sentences_main</shell>
+      <fields>word</fields>
+      <threads>1</threads>
+    </bolt>
+    <bolt>
+      <id>count</id>
+      <shell>word_count_main</shell>
+      <fields>word,count</fields>
+      <threads>1</threads>
+    </bolt>
+  </bolts>
+  <links>
+     <link>
+       <from>spout</from>
+       <to>split</to>
+       <grouping>shuffle</grouping>
+       <fields>sentence</fields>
+    </link>
+    <link>
+      <from>split</from>
+      <to>count</to>
+      <grouping>fields</grouping>
+      <fields>word</fields>
+    </link>
+  </links>
+</topology>
+

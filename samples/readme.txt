@@ -1,0 +1,3 @@
+word_count:简单的wordcount示例，spout发送句子，split拆分单词，wordcount统计；自动ack，当消息处理失败时没有重放，适合不是严格要求消息不丢失的情况；
+topology.xml描述了拓扑结构，在我们内部是有组件解析并自动打包的；个人可以使用java代码替代之。
+注意：在代码中用到了一些简单到内部库，如time,logging等，使用者可以用自己的库代替
