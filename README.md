@@ -4,8 +4,8 @@ stormcpp
 A C++ wrapper for Storm(https://github.com/nathanmarz/storm/).
 Storm topologies can be written with c++ based on this wrapper.
 
-Written based on Multlang-protocol of storm:https://github.com/nathanmarz/storm/wiki/Multilang-protocol
-NOTE: jsoncpp-0.6.0 is needed for compile and run.
+This is an implementation of Multlang-protocol of storm:https://github.com/nathanmarz/storm/wiki/Multilang-protocol
+NOTE: jsoncpp-0.6.0 is needed .
 
 ***********
 
